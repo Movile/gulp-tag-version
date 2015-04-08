@@ -1,6 +1,6 @@
 {
   "name": "gulp-tag-version",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Tag git repository with current package version",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/ikari-pl/gulp-tag-version.git"
+    "url": "http://github.com/Movile/gulp-tag-version.git"
   },
   "author": "Cezar \"ikari\" Pokorski <git@ikari.pl>",
   "license": "BSD-2-Clause",
