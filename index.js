@@ -9,7 +9,7 @@ var map = require('map-stream'),
  * @param opts.push {boolean?} Push tags tagging? Default: true
  * @param opts.version {string?} Alternatively, just pass the version string here. Default: undefined.
  */
-module.exports = function(opts) {
+module.exports = function (opts) {
     if (!opts) {
         opts = {};
     }
@@ -22,8 +22,11 @@ module.exports = function(opts) {
     if (typeof opts.push === 'undefined') {
         opts.push = true;
     }
+    if (typeof opts.message === 'undefined') {
+        opts.message = 'Tagging as %VERSION%';
+    }
 
-    function modifyContents(file, cb) {
+    function modifyContents (file, cb) {
         var version = opts.version; // OK if undefined at this time
         if (!opts.version) {
             if (file.isNull()) {
@@ -36,9 +39,13 @@ module.exports = function(opts) {
             var json = JSON.parse(file.contents.toString());
             version = json[opts.key];
         }
-        tag = opts.prefix + version;
+
+        var tag = opts.prefix + version;
+        var message = opts.message.replace('%VERSION%', tag);
+
         gutil.log('Tagging as: ' + gutil.colors.cyan(tag));
-        git.tag(tag, 'tagging as ' + tag, opts);
+        git.tag(tag, message, opts);
+
         cb(null, file);
     }
 
