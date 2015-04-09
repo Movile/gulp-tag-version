@@ -1,4 +1,4 @@
-var map = require('map-stream'),
+var through = require('through2'),
     gutil = require('gulp-util'),
     git = require('gulp-git');
 
@@ -46,5 +46,5 @@ module.exports = function (opts) {
         cb(null, file);
     }
 
-    return map(modifyContents);
+    return through.obj(modifyContents);
 };
