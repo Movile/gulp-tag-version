@@ -23,7 +23,7 @@ module.exports = function (opts) {
         opts.message = 'Tagging as %VERSION%';
     }
 
-    function modifyContents (file, cb) {
+    function modifyContents (file, enc, cb) {
         var version = opts.version; // OK if undefined at this time
         if (!opts.version) {
             if (file.isNull()) {
