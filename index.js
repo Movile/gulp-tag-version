@@ -19,9 +19,6 @@ module.exports = function (opts) {
     if (typeof opts.prefix === 'undefined') {
         opts.prefix = 'v';
     }
-    if (typeof opts.push === 'undefined') {
-        opts.push = true;
-    }
     if (typeof opts.message === 'undefined') {
         opts.message = 'Tagging as %VERSION%';
     }

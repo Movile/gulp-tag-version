@@ -18,11 +18,11 @@
   "author": "Cezar \"ikari\" Pokorski <git@ikari.pl>",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "map-stream": "~0.1.0",
-    "gulp-util": "~2.2.14",
-    "gulp-git": "~0.3.6"
+    "gulp-git": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "map-stream": "^0.1.0"
   },
   "devDependencies": {
-    "gulp": "~3.6.0"
+    "gulp": "^3.8.11"
   }
 }
